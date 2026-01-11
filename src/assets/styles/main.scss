@@ -1,0 +1,104 @@
+
+
+// 全局变量（可复用）
+$primary-color: #ff6b35;  // 主题色：温暖的橙色
+$primary-light: #ff8e60;  // 主题色浅色
+$primary-dark: #e55a27;   // 主题色深色
+$secondary-color: #f7c59f;  // 辅助色
+$text-color: #2d2d2d;        // 主要文字色
+$text-secondary: #666;        // 次要文字色
+$border-color: #e0e0e0;      // 边框色
+$card-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);  // 卡片阴影（更明显）
+$bg-color: #f9f5f0;          // 页面背景色
+$card-bg: #ffffff;           // 卡片背景色
+
+// 全局样式重置
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: $text-color;
+  background-color: $bg-color;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+// 全局容器样式
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// 全局组件样式调整
+.el-card {
+  height: 100%;
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: $card-shadow;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.el-button {
+  border-radius: 24px !important;
+  padding: 8px 20px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  
+  &.el-button--primary {
+    background-color: $primary-color !important;
+    border-color: $primary-color !important;
+    
+    &:hover {
+      background-color: $primary-dark !important;
+      border-color: $primary-dark !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    }
+  }
+}
+
+.el-input, .el-select {
+  width: 100%;
+  
+  .el-input__wrapper {
+    border-radius: 20px !important;
+    box-shadow: none !important;
+    
+    &:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    }
+  }
+}
+
+.el-tag {
+  border-radius: 12px !important;
+  padding: 2px 10px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+// 全局动画
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
